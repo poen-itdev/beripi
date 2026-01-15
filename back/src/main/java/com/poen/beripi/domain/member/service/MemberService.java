@@ -49,17 +49,18 @@ public class MemberService implements UserDetailsService{
 
         Member member = Member.builder()
             .memberId(dto.getMemberId())
-            .memberEmail(dto.getMemberEmail())
             .memberPw(passwordEncoder.encode(dto.getMemberPw()))
             .memberName(dto.getMemberName())
+            .memberEmail(dto.getMemberEmail())
             .memberDepartment(dto.getMemberDepartment())
+            .memberPosition(dto.getMemberPosition())
+            .role(RoleType.USER)
+            .isFirstLogin("Y")
             .useYn("Y")
             .regId("admin")
             .regDate(LocalDateTime.now())
-            .updateId("admin")
-            .updateDate(LocalDateTime.now())
-            .role(RoleType.USER)
-            .isFirstLogin("Y")
+            .chgId("admin")
+            .chgDate(LocalDateTime.now())
             .build();
 
         return memberRepository.save(member).getMemberId();

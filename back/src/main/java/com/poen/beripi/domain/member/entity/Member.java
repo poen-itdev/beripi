@@ -32,9 +32,6 @@ public class Member {
     @Id
     @Column(name = "member_id")
     private String memberId;
-    
-    @Column(name = "member_email")
-    private String memberEmail;
 
     @Column(name = "member_pw")
     private String memberPw;
@@ -42,8 +39,21 @@ public class Member {
     @Column(name = "member_name")
     private String memberName;
 
+    @Column(name = "member_email")
+    private String memberEmail;
+
     @Column(name = "member_department")
     private String memberDepartment;
+
+    @Column(name = "member_position")
+    private String memberPosition;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private RoleType role;
+
+    @Column(name = "is_first_login")
+    private String isFirstLogin;
 
     @Column(name = "use_yn")
     private String useYn;
@@ -55,25 +65,11 @@ public class Member {
     @Column(name = "reg_date")
     private LocalDateTime regDate;
 
-    @Column(name = "update_id")
-    private String updateId;
-
-    @LastModifiedDate
-    @Column(name = "update_date")
-    private LocalDateTime updateDate;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "role")
-    private RoleType role;
-
-    @Column(name = "is_first_login")
-    private String isFirstLogin;
-
     @Column(name = "chg_id")
     private String chgId;
 
     @Column(name = "chg_date")
-    @CreatedDate
+    @LastModifiedDate
     private LocalDateTime chgDate;
 
     //== 메서드 ==// 
@@ -82,6 +78,7 @@ public class Member {
         this.memberEmail = dto.getMemberEmail();
         this.memberName = dto.getMemberName();
         this.memberDepartment = dto.getMemberDepartment();
+        this.memberPosition = dto.getMemberPosition();
         this.role = dto.getRole();
     }
 }

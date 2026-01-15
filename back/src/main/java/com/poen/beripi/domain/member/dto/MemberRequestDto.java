@@ -34,6 +34,9 @@ public class MemberRequestDto { // 회원 등록
     @NotBlank(groups = {addGroup.class, updateGroup.class})
     private String memberDepartment;
 
+    @NotBlank(groups = {addGroup.class, updateGroup.class})
+    private String memberPosition;
+
     @NotNull(groups = {addGroup.class, updateGroup.class})
     private RoleType role;
 }
