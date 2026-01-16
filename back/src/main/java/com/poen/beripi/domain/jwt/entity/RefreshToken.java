@@ -36,6 +36,6 @@ public class RefreshToken {
     private String refresh;
 
     @CreatedDate
-    @Column(name = "created_date", updatable = false)
-    private LocalDateTime createdDate;
+    @Column(name = "reg_dt", updatable = false)
+    private LocalDateTime regDt;
 }

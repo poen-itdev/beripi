@@ -58,9 +58,9 @@ public class MemberService implements UserDetailsService{
             .isFirstLogin("Y")
             .useYn("Y")
             .regId("admin")
-            .regDate(LocalDateTime.now())
+            .regDt(LocalDateTime.now())
             .chgId("admin")
-            .chgDate(LocalDateTime.now())
+            .chgDt(LocalDateTime.now())
             .build();
 
         return memberRepository.save(member).getMemberId();
