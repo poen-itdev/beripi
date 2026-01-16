@@ -62,15 +62,15 @@ public class Member {
     private String regId;
 
     @CreatedDate
-    @Column(name = "reg_date")
-    private LocalDateTime regDate;
+    @Column(name = "reg_dt")
+    private LocalDateTime regDt;
 
     @Column(name = "chg_id")
     private String chgId;
 
-    @Column(name = "chg_date")
+    @Column(name = "chg_dt")
     @LastModifiedDate
-    private LocalDateTime chgDate;
+    private LocalDateTime chgDt;
 
     //== 메서드 ==// 
     public void updateMember(MemberRequestDto dto) {

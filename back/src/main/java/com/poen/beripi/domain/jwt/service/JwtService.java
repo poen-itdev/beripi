@@ -94,7 +94,7 @@ public class JwtService {
         entityManager.flush();
         
         log.info("Refresh Token 저장 완료 - ID: {}, MemberId: {}, CreatedDate: {}", 
-                savedToken.getId(), savedToken.getMemberId(), savedToken.getCreatedDate());
+                savedToken.getId(), savedToken.getMemberId(), savedToken.getRegDt());
     }
 
     // Jwt Refresh 토큰 기반 존재 확인 메소드
